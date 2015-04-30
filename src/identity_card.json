@@ -1,0 +1,12 @@
+{
+  "idName"       : "xxx",
+  "idGender"     : "male",
+  "idFolk"       : "han",
+  "idBirthDay"   : "1990-07-01",
+  "idAddress"    : "abc",
+  "idAgency"     : "cde",
+  "idExpireStart": "1999-07-01",
+  "idExpireEnd"  : "2020-07-01",
+  "idPicture"    : "ZZZZZZZZZZZZZZZZZZZZZZzzz",
+  "cardNo"       : "6897970769696855"
+}

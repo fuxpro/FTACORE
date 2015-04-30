@@ -1,0 +1,10 @@
+{
+  "name": "FTACORE",
+  "version": "0.0.1",
+  "description": "the first version of ftacore",
+  "author": "fuxpro",
+  "license": "mit",
+  "dependencies": {
+    "should": "^6.0.1"
+  }
+}
