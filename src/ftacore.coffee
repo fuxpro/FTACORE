@@ -1,5 +1,8 @@
 events = require 'events'
-dll = require './dll.coffee'
+http   = require 'http'
+fs     = require 'fs'
+
+dll    = require './dll.coffee'
 
 EVENT_TYPE = [
   'insertCard'
@@ -345,6 +348,20 @@ operatePrinterSync = (param) ->
   return dll.operatePrinterSync serviceName, action
 
 
+getImage = (location, callback) ->
+  request = http.get location, (res) ->
+    imageData = ''
+    res.setEncoding 'binary'
+
+    res.on 'data', (chunk) ->
+      imageData += chunk
+
+    res.on 'end', () ->
+      imagePath = "#{__dirname}\\image.png"
+      fs.writeFile imagePath, imageData, 'binary', (err) ->
+        throw err if err
+        callback imagePath
+
 
 module.exports =
   fireEvent                 : fireEvent
@@ -363,3 +380,4 @@ module.exports =
   getPrinterStatusSync      : getPrinterStatusSync
   operatePrinter            : operatePrinter
   operatePrinterSync        : operatePrinterSync
+  getImage                  : getImage

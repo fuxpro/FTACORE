@@ -181,3 +181,13 @@ describe 'ftacore test', ->
 
     console.log ftacore.operatePrinterSync(param)
     done()
+
+  it 'getImage', (done) ->
+    location =
+      host: 'www.baidu.com'
+      port: 80
+      path: '/img/bdlogo.png'
+
+    ftacore.getImage location, (path) ->
+      console.log path
+      done()
